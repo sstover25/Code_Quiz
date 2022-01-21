@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>It's Quiz Time!</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+        <!-- Header needs to contain the timer and a link to view the high scores list -->
+    <header>
+        <nav class="header">
+            <ul>
+                <li>
+                    <a class="high-scores-list-nav" href="#">View High Scores</a>
+                </li>
+                <li>
+                    <div class="countdown-timer">Time: <span id="timer"></span></div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- after 'start quiz' is pushed, the timer begins to count down and the first question should appear on screen -->
+    <!-- all questions should be multiple choice, which each option being a selectable button, which should change color when selected/pushed -->
+    <!-- the order of appearance for the questions should be randomized, but the same question should not appear more than once per quiz session -->
+    <!-- if the question is answered correctly, the phrase 'Correct' flashes on screen and the user is taken to the next question -->
+    <!-- if the question is answered incorrectly, the phrase 'Incorrect' flashes on screen, a set number is deducted from the timer, and the user is taken to the next question -->
+    <!-- if the timer hits zero before the quiz is complete or if the user answers all of the quiz questions, the user should be taken to a 'game over' screen where they can enter their initials and submit them to the high scores list -->
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
