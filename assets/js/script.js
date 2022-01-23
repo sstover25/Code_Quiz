@@ -1,15 +1,15 @@
 // variables for various buttons
 
-var quizOptionsSectionEl = document.querySelector("#quiz-options-selection")
+var quizOptionsEl = document.querySelector("#quiz-options-selection")
 var submitBtnEl = document.querySelector("#submit-btn")
 var retryBtnEl = document.querySelector("#retry-btn")
 var clearHighScoreBtnEl = document.querySelector("#clear-high-score-btn")
 
-// timer variables
+
 var timerEl = 11
 
 
-var quizStemSectionEl = document.querySelector("#quiz-stem")
+var quizStemEl = document.querySelector("#quiz-stem")
 var highScoreListEl = document.querySelector("#high-score-list")
 var scoreEl = document.querySelector("#score")
 
@@ -21,6 +21,7 @@ var scoreEl = document.querySelector("#score")
 
 function startTimer() {
     timerEl = timerEl - 1;
+    //if ()
     if (timerEl < 11) {
         timer.innerHTML = timerEl;
     }
@@ -36,13 +37,48 @@ timerInterval = setInterval("startTimer()", 1000);
 
 // function setScore() {
 
-
-//     // if the 5th question is answered
-//     scoreEl = parseInt(timerEl) % 1000;
-//     localStorage.setItem("initialScore", JSON.stringify(scoreEl));
 // }
+var quizQuestions = [ {
+    "question": "What command is used to create and move into a new branch?",
+    "options": ["checkout", "checkout -b", "add .", "add -A"],
+    "key": ["checkout -b"]
+},
+{
+    "question": "Which of the following special characters is often called a 'terminator'?",
+    "options": [";", ":", "*", "#"],
+    "key": [";"]
+},
+{
+    "question": "What does the phrase 'declare a function' mean?",
+    "options": ["Deleting the function", "Appending the function", "Creating the function", "Displaying the function"],
+    "key": ["Creating the function"]
+},
+{
+    "question": "What do you call the code written between two curly braces?",
+    "options": ["Code block", "Code bleak", "Code bland", "Code bloat"],
+    "key": ["Code block"]
+},
+{
+    "question": "What code can we use to display something in the console?",
+    "options": ["console.call", "console.play", "console.cry", "console.log"],
+    "key": ["console.log"]
+},
+{
+    "question": "What special character should be used to see if the following values are equal in value and type: '2' __ 2?",
+    "options": ["!=", "==", "===", "="],
+    "key": ["==="]
+}
+]
 
-//startTimer;
+var maxQuestions = 3;
+var randomizeQuestion = Math.floor(Math.random() * quizQuestions.length);
+
+quizStemEl.innerHTML = quizQuestions[randomizeQuestion].question;
+
+for (var i = 0; i < maxQuestions; i++) {
+    quizOptionsEl[i].innerHTML = quizQuestions[randomizeQuestion].options[i];
+}
+
 
 // save score to localStorage
 
