@@ -5,7 +5,10 @@ var submitBtnEl = document.querySelector("#submit-btn")
 var retryBtnEl = document.querySelector("#retry-btn")
 var clearHighScoreBtnEl = document.querySelector("#clear-high-score-btn")
 
-var timerEl = document.querySelector("#timer")
+// timer variables
+var timerEl = 11
+
+
 var quizStemSectionEl = document.querySelector("#quiz-stem")
 var highScoreListEl = document.querySelector("#high-score-list")
 var scoreEl = document.querySelector("#score")
@@ -15,19 +18,31 @@ var scoreEl = document.querySelector("#score")
 // quiz page
 
 // starting the timer
-setInterval(startTimer, 1000);
-timerEl = 5000;
+
 function startTimer() {
-    if (timerEl > 0) {
-      timerEl = timerEl - 1000;
-      console.log(timerEl);
-    } else if (timerEl <=0) {
-        location.href = "./game-over.html"
+    timerEl = timerEl - 1;
+    if (timerEl < 11) {
+        timer.innerHTML = timerEl;
     }
-    
+
+    if (timerEl < 1) {
+        window.clearInterval(timerInterval);
+        location.href = "./game-over.html";
+    }
 }
 
-startTimer;
+timerInterval = setInterval("startTimer()", 1000);
+
+
+// function setScore() {
+
+
+//     // if the 5th question is answered
+//     scoreEl = parseInt(timerEl) % 1000;
+//     localStorage.setItem("initialScore", JSON.stringify(scoreEl));
+// }
+
+//startTimer;
 
 // save score to localStorage
 
