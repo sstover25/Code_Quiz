@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  width: auto;
+}
+
+header nav div {
+  justify-content: space-between;
+
+  width: auto;
+}
